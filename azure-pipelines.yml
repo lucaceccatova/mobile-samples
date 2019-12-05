@@ -9,7 +9,7 @@ trigger:
       - master
  paths:
     include:
-      - mobile-samples/BluetoothLEExplorer/*
+      - BluetoothLEExplorer/*
 pool:
   vmImage: 'macos-latest'
 
@@ -22,11 +22,11 @@ steps:
 
 - task: NuGetCommand@2
   inputs:
-    restoreSolution: 'mobile-samples/BluetoothLEExplorer/*.sln'
+    restoreSolution: 'BluetoothLEExplorer/*.sln'
 
 - task: XamarinAndroid@1
   inputs:
-    projectFile: 'mobile-samples/BluetoothLEExplorer/BluetoothLEExplorer.Droid/BluetoothLEExplorer.Droid.csproj'
+    projectFile: 'BluetoothLEExplorer/BluetoothLEExplorer.Droid/BluetoothLEExplorer.Droid.csproj'
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
 - task: PublishBuildArtifacts@1
