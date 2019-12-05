@@ -26,7 +26,7 @@ steps:
 
 - task: XamarinAndroid@1
   inputs:
-    projectFile: 'mobile-samples/BluetoothLEExplorer/BluetoothLEExplorer.Droid/*.csproj'
+    projectFile: 'mobile-samples/BluetoothLEExplorer/BluetoothLEExplorer.Droid/BluetoothLEExplorer.Droid.csproj'
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
 - task: PublishBuildArtifacts@1
