@@ -34,3 +34,12 @@ steps:
     contents: '**/*.apk'
     targetFolder: '$(build.artifactStagingDirectory)'
 - task: PublishBuildArtifacts@1
+
+
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: '$(outputDirectory)/*.apk'
+    apksignerKeystoreFile: 'debug.keystore'
+    apksignerKeystorePassword: 'android'
+    apksignerKeystoreAlias: 'androiddebugkey'
+    apksignerKeyPassword: 'android'
